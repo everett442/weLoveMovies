@@ -66,5 +66,5 @@ The following routes and methods are available:
 ### To run locally
 
 1. Run `npm install`
-2. Do `cp .env.sample env` and paste your database url as the value for the variable `DATABASE_URL`
+2. Do `cp .env.sample .env` and paste your database url as the value for the variable `DATABASE_URL` in `.env` file
 3. Run `npm run start:dev`
