@@ -26,11 +26,14 @@ const readReviewsByMovie = async (req, res, next) => {
 };
 
 const list = async (req, res, next) => {
-  if (req.query) {
-    req.query.is_showing === "true" &&
-      res.json({ data: await moviesService.listMoviesCurrentlyShowing() });
+  const { is_showing } = req.query;
+  if (is_showing) {
+    res
+      .status(200)
+      .json({ data: await moviesService.listMoviesCurrentlyShowing() });
+  } else {
+    res.status(200).json({ data: await moviesService.list() });
   }
-  res.json({ data: await moviesService.list() });
 };
 
 module.exports = {
